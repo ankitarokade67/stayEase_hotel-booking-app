@@ -1,0 +1,38 @@
+
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18px 8%;
+  background: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+}
+
+.logo {
+  color: #176b5b;
+  font-size: 26px;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  align-items: center;
+  gap: 24px;
+}
+
+nav a {
+  color: #333333;
+  text-decoration: none;
+}
+
+nav a:hover {
+  color: #176b5b;
+}
+
+.register-btn {
+  padding: 10px 16px;
+  color: #ffffff;
+  background: #176b5b;
+  border-radius: 6px;
+}

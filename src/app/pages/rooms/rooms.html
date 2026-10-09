@@ -1,0 +1,40 @@
+<section class="hero">
+    <div class="hero-content">
+        <h1>Find your perfect stay</h1>
+        <p>Discover comfertable rooms</p>
+    </div>
+</section>
+<section class="room-section">
+    <h2>Explore our Rooms</h2>
+    <div class="search-bar">
+        <inout type="text" placeholder="serch room type" [(ngModel)]="searchText"/>
+        <select [(ngModel)]="guests">
+            <option [(ngValue)]="1">guest 1</option>
+            <option [(ngValue)]="2">guest 2</option>
+            <option [(ngValue)]="3">guest 3</option>
+            <option [(ngValue)]="4">guest 4</option>
+        </select>
+    </div>
+    <div class="room-grid">
+        <article class="room-card" *ngFor="let room for filterdRooms">
+            <img [src]="room.image_url" [alt]="room.room_type.name"/>
+
+            <div class="room-info">
+                <span class="room-type">{{room.room_type.name0}}</span>
+                <h3>Room {{room.room_number}}</h3>
+                <p>{{room.room_type.description}}</p>
+                <P>Maximum {{room.room_type.max_guests}} guests</P>
+                <div class="amenities">
+                    <span *ngFor="let amenity of room.amenities">{{amenity}}</span>
+                </div>
+                <div class="room-bottom">
+                    <strong>
+                        {{room.room_type.base_price}} Rs/night
+                    </strong>
+                    <a [routerLink]="['./rooms',room.id]">View Details</a>
+                </div>
+            </div>
+        </article>
+    </div>
+    <p class="empty-message" *ngIf="filterdRooms.length===0">No rooms found</p>
+</section>
